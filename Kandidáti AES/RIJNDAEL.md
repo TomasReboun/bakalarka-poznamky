@@ -26,3 +26,7 @@ tags:
 - [[bitové permutace]]
 ##### Útoky
 - útok na redukovanou verzi [zde](https://www.schneier.com/wp-content/uploads/2016/02/paper-rijndael.pdf)
+
+
+
+zkouším jestli to funguje
