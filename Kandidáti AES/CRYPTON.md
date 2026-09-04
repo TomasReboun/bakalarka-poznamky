@@ -16,6 +16,7 @@ na první konferenci objeveny slabé klíče, na druhé konferenci šifra oprave
 - 4 varianty 1 S-boxu: 8bitů -> 8bitů
 - key schedule - různý podle délky klíče
 - šifrování == dešifrování, až na pořadí rundovních klíčů
+- popis revidované verze [zde](https://scispace.com/pdf/a-revised-version-of-crypton-crypton-v1-0-43i5o2m7zl.pdf)
 ##### Matematika
 - [[GF(2)]]
 - [[bitové permutace]]
