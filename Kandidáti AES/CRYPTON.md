@@ -27,4 +27,7 @@ na první konferenci objeveny slabé klíče, na druhé konferenci šifra oprave
 - stochastická analýza (8 kol) [zde](https://www.researchgate.net/publication/220942318_Stochastic_Cryptanalysis_of_Crypton)
 - collision attacks (8 kol) [zde](https://www.researchgate.net/publication/275073613_Collision_Attacks_on_AES-192256_Crypton-192256_mCrypton-96128_and_Anubis)
 
-
+### Poznámky
+- slabé klíče -> indikace strukturálního problému
+- alespoň 2 potenciálně zajímavé útoky
+- podobná Rijndaelu

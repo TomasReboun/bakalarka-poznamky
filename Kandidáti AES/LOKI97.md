@@ -21,5 +21,8 @@ tags:
 - [[bitové permutace]]
 ##### Útoky
 - slabiny v rundovní funkci [kratší](https://www.researchgate.net/publication/2512721_Weaknesses_in_LOKI97), [delší](https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/366)
+### Poznámky
+- matematicky potencálně zajímavější
+- slabé klíče
 
 

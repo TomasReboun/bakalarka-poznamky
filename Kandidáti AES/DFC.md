@@ -19,4 +19,7 @@ DFC = Decorrelated Fast Cipher
 ##### Útoky
 - útok na 6ti kolovou verzi [zde](https://www.researchgate.net/publication/220942360_On_the_Decorrelated_Fast_Cipher_DFC_and_Its_Theory)
 - během konference objevena slabina v key schedule, opraveno [zde](https://www.di.ens.fr/david.pointcheval/Documents/Papers/w1999_DFCv2.pdf?utm_source=chatgpt.com)
-
+### Poznámky
+- potenciálně zajímavý Decorrelation theory, nemá S-Boxy
+- zranitelnost vůči diferenční kryptoanalýze?
+- potenciálně větší téma samo o sobě

@@ -23,5 +23,7 @@ tags:
 - [[bitové permutace]]
 ##### Útoky
 - related-key attack [zde](https://www.schneier.com/wp-content/uploads/2016/02/paper-safer.pdf)
+### Poznámky
+- potenciálně matematicky zajímavý (dlog, dexp)
 
 

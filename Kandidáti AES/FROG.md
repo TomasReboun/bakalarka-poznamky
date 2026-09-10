@@ -20,5 +20,7 @@ tags:
 ##### Útoky
 - lineární a diferenční útoky v krátkém čase (slabé klíče) [zde](https://www.schneier.com/wp-content/uploads/2016/02/paper-frog.pdf)
 
+### Poznámky
+- záleží jak vypadají útoky na slabé klíče a kolik těch klíčů je - slabé klíče ~ potenciální strukturální problém
 
 

@@ -20,5 +20,5 @@ tags:
 ##### Útoky
 - útok na redukované verze [zde](https://www.schneier.com/wp-content/uploads/2016/02/paper-mars-attacks.pdf)
 
-
-
+### Poznámky
+- problémy s efektivitou, potenciálně spíše měně zajímavá šifra

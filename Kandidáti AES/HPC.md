@@ -18,6 +18,7 @@ tags:
 - [[ARX]]
 ##### Útoky
 - ekvivalentní klíče [zde](https://scispace.com/pdf/equivalent-keys-of-hpc-4kcjg2lbgc.pdf)
-
-
+### Poznámky
+- ekvivalentní klíče
+- potenciálně zajímavá kontrukce
 

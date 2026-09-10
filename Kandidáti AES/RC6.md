@@ -23,6 +23,8 @@ tags:
 - [[rotace závislá na vstupu]]
 - [[kvadratická transformace]]
 ##### Útoky
-
+### Poznámky
+- Jednoduchý algoritmus
+- Mám dojem, že blocker byla licence
 
 

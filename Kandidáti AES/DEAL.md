@@ -20,4 +20,5 @@ DEAL = Data Encryption Algorithm with Larger blocks
 - analýza key schedulu (slabé klíče) [zde](https://www.schneier.com/wp-content/uploads/2016/02/paper-deal.pdf)
 
 
-
+### Poznámky
+- nuda
