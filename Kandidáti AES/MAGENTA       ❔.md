@@ -29,4 +29,4 @@ tags:
 - nepodařilo se dohledat popis
 - potenciálně zajímavá
 - [link](https://www.semanticscholar.org/paper/The-MAGENTA-Block-Cipher-Algorithm-Jacobson-Huber/7eea680e2bb04a22f247c381e1a3cdac0a1e6c62)
-- [link2](https://link.springer.com/chapter/10.1007/978-3-540-47942-0_3) - odkazuje i na [[LOKI97]] a [[DFC]]
+- [link2](https://link.springer.com/chapter/10.1007/978-3-540-47942-0_3) - odkazuje i na LOKI97 a DFC
