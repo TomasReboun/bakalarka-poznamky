@@ -24,7 +24,6 @@ tags:
 - [[bitové permutace]]
 ##### Útoky
 - útok založený na symetrii subklíčů [zde](https://www.schneier.com/wp-content/uploads/2016/02/paper-magenta.pdf)
-- reflection attack [zde](https://eprint.iacr.org/2007/043.pdf?utm_source=chatgpt.com)
 ### Poznámky
 - nepodařilo se dohledat popis
 - potenciálně zajímavá
