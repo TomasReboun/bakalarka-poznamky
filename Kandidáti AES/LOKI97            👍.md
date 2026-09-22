@@ -20,9 +20,9 @@ tags:
 - [[Modulární aritmetika]]
 - [[bitové permutace]]
 ##### Útok na LOKI97
-- [zdroj](https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/366)
+ [zdroj](https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/366)
 - slabiny v rundovní funkci -> teoretické útoky
-1) ==Diferenční kryptoanalýza== 
+ 1) ==Diferenční kryptoanalýza== 
 	- 1bitový rozdíl vstupu rundovní funkce má relativně velkou pravděpodobnost na 1bitový rozdíl výstupu
 	- two-round iterative characteristics
 	- využívá vlastnosti S-boxů
@@ -34,6 +34,10 @@ tags:
 		(odhadnuto $2^{56}$ potřebných known plaintextů)
 	- zmíněno partitioning cryptanalysis (zobecnění lineární kryptoanalýzi) 
 - krátký popis, málo matiky
+ [zdroj2](https://link.springer.com/chapter/10.1007/978-3-540-47942-0_3)(strana 27 - 30)
+ - ==Lineární kryptoanalýza==
+ - využívá analýzu S-boxů -> algebra a booleovské funkce
+
 ### Poznámky
 - matematicky potenciálně zajímavější
 - slabé klíče
