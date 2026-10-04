@@ -79,12 +79,6 @@ kde
 	$g_i(K1,K3,K2)=f(K1+K3+(Delta*i),K2)$
 	$Delta= \lfloor(\sqrt5-1)*2^{63} \rfloor=(9E3779B97F 4A7C15)_{16}$ 
 
-
-
-# odkazy
- [zdroj1](https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/366)
- [zdroj2](https://link.springer.com/chapter/10.1007/978-3-540-47942-0_3)(strana 27 - 30)
-
 # Diferenční kryptoanalýza
  [zdroj](https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/366) (Weaknesses in LOKI97)
  Jedná se o **chosen plaintext attack**.
@@ -118,6 +112,7 @@ Chceme **two round iterative charakteristic**.
 diference $[0|e_i]$ --(1.runda)--> diference $[e_i|0]$ --(2.runda)--> diference $[0|e_i]$.
 Toto lze zřetězit.
 
+#### Charakteristika pro $i=63$
 **Poznámka:** Co se děje při přičtení klíče modulo $2^{64}$?
 Označme jednotlivé bity slova $x=x_{63}x_{62}...x_2x_1x_0$
 (kde $x_{63}$ je nejvýznamnější bit).
@@ -152,3 +147,90 @@ Z toho plyne $$P[\Delta f(e_{63})]=P[f(R)\oplus f(R \oplus e_{63})=0]=2^{-8}$$
 Takto dostaneme iterativní charakteristiku po dvou rundách. $$[0|e_{63}] \to [e_{63}|0] \to [0|e_{63}] \text{ s pravděpodobností } 2^{-8} $$Toto lze opakovat 7krát a dostat 15-kolovou charakteristiku s pravděpodobností $2^{-56}$. 🧐
 
 #### Ostatní charakteristiky
+Zvolíme $i \neq 63$. Platí $\Delta R=R \oplus R^*=e_i$.
+
+Při každém přičtení subklíče se diference $e_i$ **nezmění** s pravděpodobností $1/2$.
+Navíc se v každé rundě přičtou 2 subklíče.
+
+Funkce $KP()$ "přesune" diferenci z bitu $i$ na bit $i$ nebo bit $i+32 \mod 64$.
+Uvažujme všechny dvojice $(i,i+32 \mod 64)$.
+
+Můžeme bity $i$ rozdělit do tří skupin podle toho co se děje při expanzi $E()$.
+(vyjdeme z popisu $E()$)
+
+1️⃣ $i \in \{7, 15, 23, 31, 39, 47, 55, 63\}$
+	Potom se ani jeden z bitů $i,i+32 \mod 64$ neexpanduje.
+	(jen jeden aktivní S-box)
+	Celkem 7 bitů. (bit 63 vyřešen dříve)
+
+2️⃣ $i \in \{14, 19, 20, 30, 35, 36, 38, 43, 44, 54, 59, 60\}$
+	Potom se bit $i$ neexpanduje.
+	Podmínka na permutační klíč: bit $0$ na pozici $i\mod32$.
+	Celkem 12 bitů.
+
+3️⃣ $i \in \{3, 4, 6, 11, 12, 22, 27, 28, 46, 51, 52, 62\}$
+	Potom se bit $i+32\mod64$ neexpanduje.
+	Podmínka na permutační klíč: bit $1$ na pozici $i\mod32$.
+	Celkem 12 bitů.
+
+Pro tyto $i$ je tedy aktivován jen jeden S-box a proto platí $$P[\Delta f(e_i)]=P[f(R)\oplus f(R \oplus e_i)=0]=2^{-8}$$navíc se ale musí zohlednit 2 přičtení sub-klíče,
+tedy pravděpodobnost, že diference $[0|e_i]$ --(1.runda)--> diference $[e_i|0]$ 
+je $2^{-1}*2^{-8}*2^{-1}=2^{-10}$.
+
+Toto dohromady dává 7 charakteristik s pravděpodobností $2^{-10}$
+a 24 key-dependent charakteristik s pravděpodobností $2^{-10}$.
+
+Z nich lze poskládat 15ti kolovou charakteristiku s pravděpodobností $2^{-70}$.
+
+#### Resynchronizace
+Při modulárním sčítání může jednobitová diference $e_i$ v důsledku propagace carry přejít na vícebitovou diferenci. Pravděpodobnost konkrétního carry řetězce klesá exponenciálně s jeho délkou. Pro $i=63$ již nemůže carry ovlivnit žádný další bit 64bitového výsledku, a proto se diference $e_{63}$ zachová s pravděpodobností 1.
+
+Princip resynchronizace: $$e_i \to e_i \oplus e_{i+1} \oplus e_{i+2} \to e_i$$První přechod vznikne kvůli carry a druhé sčítání *může* rozdíl zase **synchronizovat zpět**.
+
+Takže toto ASI nějak zvyšuje pravděpodobnost charakteristiky,
+ale v článku to už neřeší. 😒
+
+#### Útok
+Máme 15-ti kolovou charakteristiku, ta vytváří vztah mezi plaintextem a stavem před posledním kolem. Poslední kolo chceme nechat stranou.
+
+             15 kol charakteristiky
+P ───────────────────────────────────► ● ──► 16. kolo ──► C
+                                      ↑
+                               útočník zde
+
+Můžeme pozorovat ciphertext a zkoušet kandidáty posledního round key.
+Pravděpodobnost úspěšného páru je $2^{-56}$.
+(proto (statisticky) potřebujeme $2^{56}$ chosen plaintextů ???)
+
+Generujeme dvojice plaintextů: $(P, P^*=P\oplus [0|e_{63}])$.
+Každý pár má tedy požadovanou vstupní diferenci.
+
+Po 15 rundách se z $(P,P^*)$ stane $(X_{15},X_{15}^*)$.
+Pokud to prošlo úspěšně, platí $X_{15}=X_{15}^*\oplus [0|e_{63}]$.
+
+Máme odpovídající ciphertexty $C,C^*$.
+Můžeme **částěčně dešifrovat** poslední kolo, pokud uhádneme příslušnou část posledního sub-klíče.
+
+Takže: $C,C^*$ --(inverze last round | kandidát $K_{16}$)--> $X_{15},X_{15}^*$.
+Pokud bude sedět diference u většího počtu párů, je $K_{16}$ správně.
+
+
+# Lineární kryptoanalýza 1
+ [zdroj](https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/366) (Weaknesses in LOKI97)
+Cílem je najít lineární aproximaci (části) šifry. Existují 2 druhy:
+
+🅰️ aproximace využívá korelace mezi sumou 
+	vstupních/výstupních bitů rundovní funkce $f$.
+	použito při útoku na DES
+	kvůli 2 vrstvám S-boxů u LOKI97 je nízká
+	korelace -> nepoužitelné
+
+🅱️ aproximace využívá nevyváženost (imbalance) 
+	ve výstupu rundovní funkce.
+	Počítá se jen každá druhá runda (proč??).
+
+Část vstupu 2. vrstvy S-boxů je určena pouze klíčem,
+takže pro daný klíč jsou fixní.
+# Lineární kryptoanalýza 2
+ [zdroj2](https://link.springer.com/chapter/10.1007/978-3-540-47942-0_3)(strana 27 - 30)
+ Zatím nezpracováno...
