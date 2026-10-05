@@ -215,8 +215,9 @@ Takže: $C,C^*$ --(inverze last round | kandidát $K_{16}$)--> $X_{15},X_{15}^*$
 Pokud bude sedět diference u většího počtu párů, je $K_{16}$ správně.
 
 
-# Lineární kryptoanalýza 1
- [zdroj](https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/366) (Weaknesses in LOKI97)
+# Lineární kryptoanalýza
+ [zdroj1](https://cosicdatabase.esat.kuleuven.be/backend/publications/files/conferencepaper/366) (Weaknesses in LOKI97)
+ [zdroj2](https://link.springer.com/chapter/10.1007/978-3-540-47942-0_3)(Cryptanalysis of Some AES Candidate Algorithms; strana 27 - 30)
 Cílem je najít lineární aproximaci (části) šifry. Existují 2 druhy:
 
 🅰️ aproximace využívá korelace mezi sumou 
@@ -231,6 +232,12 @@ Cílem je najít lineární aproximaci (části) šifry. Existují 2 druhy:
 
 Část vstupu 2. vrstvy S-boxů je určena pouze klíčem,
 takže pro daný klíč jsou fixní.
-# Lineární kryptoanalýza 2
- [zdroj2](https://link.springer.com/chapter/10.1007/978-3-540-47942-0_3)(strana 27 - 30)
- Zatím nezpracováno...
+
+**Značení**:
+	$i_0$ = hodnota nejnižšího bitu **vstupu** do rundovní funkce
+	$o_0$ = hodnota nejnižšího bitu **výstupu** z rundovní funkce
+
+Ideálně by pro náhodnou funkci mělo platit $$P(i_0 \oplus o_0=1)=P(i_0 \oplus o_0=1)=\frac12$$ale u LOKI97 je odchylka (bias) $2^{-4}$ (to je hodně) pro 25% klíčů.
+(toto spočítáno numericky - asi to souvisí s 2. článkem)
+Důvodem je, že pro daný klíč nejsou dosažitelné všechny výstupy druhé S-boxové vrstvy a výstupní bity proto nejsou vyvážené.
+
