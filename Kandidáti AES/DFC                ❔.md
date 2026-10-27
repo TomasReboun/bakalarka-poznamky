@@ -11,14 +11,11 @@ DFC = Decorrelated Fast Cipher
 - nepoužívá S-boxy, místo toho konstrukce Confusion Permutation a lookup tably
 - šifrování == dešifrování, až na pořadí rundovních klíčů
 - Decorrelation theory [zde](https://www.researchgate.net/publication/220942360_On_the_Decorrelated_Fast_Cipher_DFC_and_Its_Theory)
-##### Matematika
-- [[Decorrelation theory]]
-- [[Modulární aritmetika]]
-- [[GF(2)]]
-- [[nelineární transformace]]
+
 ##### Útoky
 - útok na 6ti kolovou verzi [zde](https://www.researchgate.net/publication/220942360_On_the_Decorrelated_Fast_Cipher_DFC_and_Its_Theory)
 - během konference objevena slabina v key schedule, opraveno [zde](https://www.di.ens.fr/david.pointcheval/Documents/Papers/w1999_DFCv2.pdf?utm_source=chatgpt.com)
+- ještě něco tady  [link2](https://link.springer.com/chapter/10.1007/978-3-540-47942-0_3)
 ### Poznámky
 - potenciálně zajímavý Decorrelation theory, nemá S-Boxy
 - zranitelnost vůči diferenční kryptoanalýze?

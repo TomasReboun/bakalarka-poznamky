@@ -17,11 +17,7 @@ na první konferenci objeveny slabé klíče, na druhé konferenci šifra oprave
 - key schedule - různý podle délky klíče
 - šifrování == dešifrování, až na pořadí rundovních klíčů
 - popis revidované verze [zde](https://scispace.com/pdf/a-revised-version-of-crypton-crypton-v1-0-43i5o2m7zl.pdf)
-##### Matematika
-- [[GF(2)]]
-- [[bitové permutace]]
-- [[lineární transformace]]
-- [[matice]]
+
 ##### Útoky
 - útok na 6ti kolovou verzi [zde](https://www.researchgate.net/publication/220942446_Attack_on_Six_Rounds_of_CRYPTON)
 - stochastická analýza (8 kol) [zde](https://www.researchgate.net/publication/220942318_Stochastic_Cryptanalysis_of_Crypton)

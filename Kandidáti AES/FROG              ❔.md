@@ -11,11 +11,6 @@ tags:
 - XOR bajtů bloku s bajty klíče
 - složitý proces generování klíče
 - 8 key-dependent S-boxů: 8bitů -> 8bitů
-##### Matematika
-- [[GF(2)]]
-- [[permutace závislé na klíči]]
-- [[S-box závislý na klíči]]
-- [[nelineární transformace]]
 
 ##### Útoky
 - lineární a diferenční útoky v krátkém čase (slabé klíče) [zde](https://www.schneier.com/wp-content/uploads/2016/02/paper-frog.pdf)

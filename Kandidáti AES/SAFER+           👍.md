@@ -14,13 +14,7 @@ tags:
 		- využívá PHT
 - 2 S-boxy (EXP a LOG): 8bitů->8bitů
 - celý popis [zde](https://networkdls.com/File/Entity/article-archive/cylink-corporations-submission-for-aes.pdf?utm_source=chatgpt.com)
-##### Matematika
-- [[GF(2)]]
-- [[Modulární aritmetika]]
-- [[diskrétní mocnění]]
-- [[Pseudo-Hadamard Transform]]
-- [[lineární transformace]]
-- [[bitové permutace]]
+
 ##### Útok na SAFER+
 - [zdroj](https://www.schneier.com/wp-content/uploads/2016/02/paper-safer.pdf)
 - ==key schedule== je horší pro delší klíče (špatná difuze)
